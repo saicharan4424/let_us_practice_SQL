@@ -1,0 +1,7 @@
+select c.string_field_3,sum(rt.Score) as score
+from `Accenture_Forage_Virtual_internship.reactions` as r left join `Accenture_Forage_Virtual_internship.content` as c
+on r.Content_ID=c.string_field_1 left join `Accenture_Forage_Virtual_internship.reactiontypes`as rt
+on r.Reaction_Type=rt.Type  
+group by c.string_field_3 
+order by score desc
+limit 5
