@@ -80,6 +80,6 @@ Question 10 : Show all columns for patients who have one of the following patien
 
 select *
 from patients 
-where patient_id in (1,45,534,879,1000)  # IN clause used to check a value if it is present in the expected list. 
+where patient_id in (1,45,534,879,1000)  # IN clause used to check a value if it is present in the expected list.
 
 
