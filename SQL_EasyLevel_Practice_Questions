@@ -82,6 +82,15 @@ select *
 from patients 
 where patient_id in (1,45,534,879,1000)  # IN clause used to check a value if it is present in the expected list.
 
+ADMISSIONS Table:
+
+patient_id	        INT
+admission_date	    DATE
+discharge_date	    DATE
+diagnosis	          TEXT
+attending_doctor_id	INT
+
+
 Question 11 : Show the total number of admissions
 
 select count(*) as total_admissions
@@ -99,4 +108,8 @@ select patient_id,count(*) as no_admit
 from admissions
 where patient_id=579
 
+Question 14 : Based on the cities that our patients live in, show unique cities that are in province_id 'NS'?
 
+select distinct(city) as unique_cities
+from patients
+where province_id="NS
