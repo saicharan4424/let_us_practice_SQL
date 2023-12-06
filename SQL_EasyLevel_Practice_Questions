@@ -82,4 +82,10 @@ select *
 from patients 
 where patient_id in (1,45,534,879,1000)  # IN clause used to check a value if it is present in the expected list.
 
+Question 11 : Show the total number of admissions
+
+select count(*) as total_admissions
+from admissions
+
+
 
