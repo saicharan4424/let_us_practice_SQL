@@ -13,3 +13,10 @@ province_id	CHAR(2) primary key
 allergies	  TEXT
 height	    INT
 weight	    INT
+
+
+Question 1 : Show unique birth years from patients and order them by ascending.
+
+select distinct(year(birth_date)) as unique_years
+from patients
+order by unique_years
