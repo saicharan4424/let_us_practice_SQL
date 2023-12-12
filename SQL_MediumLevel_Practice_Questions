@@ -1,7 +1,7 @@
 The following questions are from sql-practice.com website, there were two data sets available in the site one is of hospital data set and another is of northwind. 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Hospital Data set
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Patients Table :
 patient_id	INT
 first_name	TEXT
@@ -14,13 +14,13 @@ allergies	  TEXT
 height	    INT
 weight	    INT
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 1 : Show unique birth years from patients and order them by ascending.
 
 select distinct(year(birth_date)) as unique_years
 from patients
 order by unique_years   # default ordering is ascending to get descending you can use column name desc
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 2 : Show unique first names from the patients table which only occurs once in the list.
 
 For example, if two or more people are named 'John' in the first_name column then don't include their name in the output list. 
@@ -30,3 +30,4 @@ select distinct(first_name)
 from patients
 group by first_name 
 having count(first_name)=1
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
