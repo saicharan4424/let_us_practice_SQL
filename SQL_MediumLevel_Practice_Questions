@@ -37,6 +37,14 @@ select patient_id,first_name
 from patients
 where len(first_name)>=6 and first_name like "s%s"
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ADMISIIONS Table 
+
+patient_id	         INT
+admission_date	     DATE
+discharge_date	     DATE
+diagnosis	           TEXT
+attending_doctor_id	 INT
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 4 : Show patient_id, first_name, last_name from patients whos diagnosis is 'Dementia'. Primary diagnosis is stored in the admissions table.
 
 select p.patient_id,p.first_name,p.last_name
