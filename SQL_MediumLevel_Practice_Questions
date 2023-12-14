@@ -52,3 +52,8 @@ from patients as p left join admissions as a
 on p.patient_id=a.patient_id
 where diagnosis="Dementia"
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 5 : Display every patient's first_name. Order the list by the length of each name and then by alphbetically
+
+select first_name
+from patients
+order by len(first_name),first_name
