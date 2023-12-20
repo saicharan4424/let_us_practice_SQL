@@ -126,3 +126,14 @@ having sum(height)>=7000
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 15 : Show the difference between the largest weight and smallest weight for patients with the last name 'Maroni'
 
+with maroni_cte as(select * from patients where last_name="Maroni") 
+select max(weight)-min(weight) 
+from maroni_cte
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 16 : Show all of the days of the month (1-31) and how many admission_dates occurred on that day. Sort by the day with most admissions to least admissions.
+
+select day(admission_date),count(*) as count
+from admissions
+group by day(admission_date) 
+order by count desc
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
