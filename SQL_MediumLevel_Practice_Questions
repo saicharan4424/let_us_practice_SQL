@@ -137,3 +137,10 @@ from admissions
 group by day(admission_date) 
 order by count desc
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 17 : Show all columns for patient_id 542's most recent admission_date.
+
+select *
+from admissions
+group by patient_id
+having patient_id=542 and admission_date= max(admission_date)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
