@@ -177,3 +177,11 @@ from doctors as d left join admissions as a
 on d.doctor_id=a.attending_doctor_id 
 group by d.doctor_id
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 21 : Display the total amount of patients for each province. Order by descending.
+
+select province_name,count(*) as total_patient_prov
+from province_names as pn join patients as p 
+on pn.province_id=p.province_id
+group by pn.province_id
+order by total_patient_prov desc
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
