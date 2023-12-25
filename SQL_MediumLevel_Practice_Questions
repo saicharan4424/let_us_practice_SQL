@@ -194,3 +194,11 @@ from admissions as a left join patients as p
 on a.patient_id=p.patient_id left join doctors as d 
 on a.attending_doctor_id=d.doctor_id
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 23 : display the first name, last name and number of duplicate patients based on their first name and last name.
+Ex: A patient with an identical name can be considered a duplicate.
+
+select first_name,last_name,count(*) 
+from patients
+group by first_name,last_name
+having count(*)>1
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
