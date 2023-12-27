@@ -33,7 +33,7 @@ when (weight/power(height/100.0,2))>=30 then 1
 else 0 
 end as isobese
 from patients
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ADMISIIONS Table 
 
 patient_id	         INT
@@ -41,13 +41,13 @@ admission_date	     DATE
 discharge_date	     DATE
 diagnosis	           TEXT
 attending_doctor_id	 INT
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DOCTORS Table
 doctor_id	  INT
 first_name	TEXT
 last_name	  TEXT
 specialty	  TEXT
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Question 3 : Show patient_id, first_name, last_name, and attending doctor's specialty.
 Show only the patients who has a diagnosis as 'Epilepsy' and the doctor's first name is 'Lisa'
@@ -58,4 +58,17 @@ from patients as p left join admissions as a
 on p.patient_id=a.patient_id left join doctors as d 
 on a.attending_doctor_id=d.doctor_id
 where a.diagnosis="Epilepsy" and d.first_name="Lisa"
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 4 : All patients who have gone through admissions, can see their medical documents on our site. 
+Those patients are given a temporary password after their first admission. Show the patient_id and temp_password.
+
+The password must be the following, in order:
+1. patient_id
+2. the numerical length of patient's last_name
+3. year of patient's birth_date
+
+select distinct p.patient_id,
+concat(p.patient_id,len(last_name),year(p.birth_date)) as temp_pass
+from patients as p join admissions as a 
+on p.patient_id = a.patient_id
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
