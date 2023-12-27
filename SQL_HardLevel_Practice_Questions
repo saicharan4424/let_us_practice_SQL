@@ -34,6 +34,21 @@ else 0
 end as isobese
 from patients
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ADMISIIONS Table 
+
+patient_id	         INT
+admission_date	     DATE
+discharge_date	     DATE
+diagnosis	           TEXT
+attending_doctor_id	 INT
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DOCTORS Table
+doctor_id	  INT
+first_name	TEXT
+last_name	  TEXT
+specialty	  TEXT
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Question 3 : Show patient_id, first_name, last_name, and attending doctor's specialty.
 Show only the patients who has a diagnosis as 'Epilepsy' and the doctor's first name is 'Lisa'
 Check patients, admissions, and doctors tables for required information.
