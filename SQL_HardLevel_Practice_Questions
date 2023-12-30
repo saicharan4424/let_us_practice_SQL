@@ -87,4 +87,11 @@ sum(case when insu="Yes" then 10 else 50 end ) as total_cost
 from insurance 
 group by insu
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 6 : Show the provinces that has more patients identified as 'M' than 'F'. Must only show full province_name
 
+select pn.province_name
+from province_names as pn left join patients as p 
+on pn.province_id=p.province_id  
+group by province_name
+having count(case when gender="M" then 1 end) > count(case when gender="F" then 0 end)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
