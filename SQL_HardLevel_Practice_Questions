@@ -87,6 +87,11 @@ sum(case when insu="Yes" then 10 else 50 end ) as total_cost
 from insurance 
 group by insu
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Table province_names
+
+province_id	  CHAR(2)
+province_name	TEXT
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 6 : Show the provinces that has more patients identified as 'M' than 'F'. Must only show full province_name
 
 select pn.province_name
