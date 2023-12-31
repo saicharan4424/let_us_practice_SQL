@@ -117,3 +117,8 @@ weight between 60 and 80 and
 mod(patient_id,2)=1 and 
 city ="Kingston"
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 8 : Show the percent of patients that have 'M' as their gender. Round the answer to the nearest hundreth number and in percent form.
+
+select concat(round(count(case when gender="M" then 1 end)*100.00/count(*),2),"%") as percentage 
+from patients
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
