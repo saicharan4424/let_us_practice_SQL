@@ -137,3 +137,14 @@ group by admission_date)
 select *, today - lag(today) over (order by admission_date) as change
 from cte
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 11 : We need a breakdown for the total amount of admissions each doctor has started each year. Show the doctor_id, doctor_full_name, specialty, year, 
+total_admissions for that year.
+
+select doctor_id,concat(first_name," ",last_name) as full_name,
+specialty,year(admission_date), count(*) as total_admissions
+from doctors as d left join admissions as a 
+on d.doctor_id=a.attending_doctor_id 
+group by doctor_id,year(admission_date)
+=====================================================================================================================================================================
+                                                           END OF HOSPITAL DATA SET QUESTIONS 
+=====================================================================================================================================================================
