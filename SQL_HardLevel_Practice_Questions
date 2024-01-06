@@ -122,3 +122,9 @@ Question 8 : Show the percent of patients that have 'M' as their gender. Round t
 select concat(round(count(case when gender="M" then 1 end)*100.00/count(*),2),"%") as percentage 
 from patients
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 9 : Sort the province names in ascending order in such a way that the province 'Ontario' is always on top.
+
+select province_name 
+from province_names 
+order by (case when province_name ="Ontario" then 1 else 0 end) desc
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
